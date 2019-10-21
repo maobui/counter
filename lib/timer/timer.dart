@@ -12,6 +12,7 @@ class TimerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Color.fromRGBO(109, 234, 255, 1),
         accentColor: Color.fromRGBO(72, 74, 126, 1),
