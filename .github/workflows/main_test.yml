@@ -3,7 +3,7 @@ on:
     branches: 
       - master
     tags:
-      - 'v1.0'
+      - v1.0
 name: Test Test C
 jobs:
   build:
