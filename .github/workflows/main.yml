@@ -4,7 +4,7 @@ on:
       - master
     tags:
       - '*'
-name: Test G Build and Release apk
+name: Test H Build and Release apk
 jobs:
   build:
     name: Build APK
@@ -20,8 +20,7 @@ jobs:
     - run: flutter pub get
     - run: flutter test
     - run: flutter build apk --debug
-    - name: Push APK to Releases
-      uses: ncipollo/release-action@v1
+    - uses: ncipollo/release-action@v1
       with:
         artifact: "build/app/outputs/apk/debug/app-debug.apk"
         token: ${{ secrets.GITHUB_TOKEN }}
