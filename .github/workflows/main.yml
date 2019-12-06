@@ -4,7 +4,7 @@ on:
       - master
     tags:
       - v1.0
-name: Test E Build and Release apk
+name: Test F Build and Release apk
 jobs:
   build:
     name: Build APK
