@@ -3,7 +3,7 @@ on:
     branches: 
       - master
     tags:
-      - v1.0
+      - 'v2.*'
 name: Test F Build and Release apk
 jobs:
   build:
@@ -23,5 +23,5 @@ jobs:
     - name: Push APK to Releases
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "build/app/outputs/apk/debug/app-debug.apk"
+        artifact: "build/app/outputs/apk/debug/app-debug.apk"
         token: ${{ secrets.GITHUB_TOKEN }}
