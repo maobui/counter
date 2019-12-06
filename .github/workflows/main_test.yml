@@ -1,0 +1,18 @@
+on: 
+  push:
+    branches: 
+      - master
+    tags:
+      - v1.0
+name: Test Test A
+jobs:
+  build:
+    name: Build APK
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "lib/main.dart"
+        bodyFile: "lib/weather/theme.dart"
+        token: ${{ secrets.GITHUB_TOKEN }}
