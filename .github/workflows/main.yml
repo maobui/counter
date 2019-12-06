@@ -3,7 +3,7 @@ name: Test, Build and Release apk 4
 on:
   push:
     tags:
-      - 'v1.0'
+      - v1.0
 
 jobs:
   build:
