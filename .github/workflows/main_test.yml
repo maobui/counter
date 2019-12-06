@@ -3,8 +3,8 @@ on:
     branches: 
       - master
     tags:
-      - '1.0'
-name: Test Test B
+      - 'v1.0'
+name: Test Test C
 jobs:
   build:
     name: Build APK
@@ -13,6 +13,6 @@ jobs:
     - uses: actions/checkout@v1
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: "lib/main.dart"
+        artifact: "lib/main.dart"
         bodyFile: "lib/weather/theme.dart"
         token: ${{ secrets.GITHUB_TOKEN }}
