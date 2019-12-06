@@ -1,5 +1,8 @@
-on: push
-name: Test, Build and Release apk
+on: 
+  push:
+    tags:
+      - v1.0
+name: Test Build and Release apk
 jobs:
   build:
     name: Build APK
