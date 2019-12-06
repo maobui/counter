@@ -1,8 +1,10 @@
 on: 
   push:
+    branches: 
+      - master
     tags: 
     - 'v1.0'
-name: Test B Build and Release apk
+name: Test C Build and Release apk
 jobs:
   build:
     name: Build APK
