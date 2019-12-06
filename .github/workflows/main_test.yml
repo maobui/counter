@@ -3,8 +3,8 @@ on:
     branches: 
       - master
     tags:
-      - v1.0
-name: Test Test A
+      - '1.0'
+name: Test Test B
 jobs:
   build:
     name: Build APK
