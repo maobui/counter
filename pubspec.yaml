@@ -28,6 +28,8 @@ dependencies:
   wave: ^0.0.8
   http: ^0.12.0+2
   rxdart: ^0.22.4
+  intl: ^0.16.0
+  path_provider: ^1.5.1
 
 dev_dependencies:
   flutter_test:

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
+import 'package:path_provider/path_provider.dart';
 
 import 'list/bloc_delegate.dart';
 import 'login/authentication_bloc.dart';
@@ -12,6 +13,9 @@ import 'login/user_repository.dart';
 import 'timer/timer.dart';
 import 'counter/counter.dart';
 import 'list/list.dart';
+import 'todo/blocs/blocs.dart';
+import 'todo/repository_simple/todos_repository_simple.dart';
+import 'todo/todo_app.dart';
 import 'weather/setting.dart';
 import 'weather/theme.dart';
 import 'weather/weather_api_client.dart';
@@ -32,8 +36,8 @@ void main() {
     ),
   );*/
 
-  BlocSupervisor.delegate = SimpleBlocDelegate();
-  final WeatherRepository weatherRepository = WeatherRepository(
+  //BlocSupervisor.delegate = SimpleBlocDelegate();
+  /*final WeatherRepository weatherRepository = WeatherRepository(
     weatherApiClient: WeatherApiClient(
       httpClient: http.Client(),
     ),
@@ -49,6 +53,21 @@ void main() {
         ),
       ],
       child: WeatherApp(weatherRepository: weatherRepository),
+    ),
+  );*/
+  runApp(
+    BlocProvider<TodosBloc>(
+      builder: (context) {
+        return TodosBloc(
+          todosRepository: TodosRepositoryFlutter(
+            fileStorage: const FileStorage(
+              '__flutter_bloc_app__',
+              getApplicationDocumentsDirectory,
+            ),
+          ),
+        )..add(LoadTodos());
+      },
+      child: TodosApp(),
     ),
   );
 }
